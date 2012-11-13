@@ -4,7 +4,7 @@ using namespace std;
 
 int izbor();
 void povikaj(int);
-//void br_deliteli();
+void br_deliteli();
 //void zbir_recip_vr();
 
 
@@ -39,7 +39,7 @@ void povikaj(int izbr)
 	switch(izbr)
 	{
 		case 1:
-			//povikaj ja br_deliteli()
+			br_deliteli();
 			break;
 		case 2:
 			//povikaj ja zbir_recip_vr()
@@ -47,4 +47,19 @@ void povikaj(int izbr)
 		default:
 			break;
 	}
+}
+
+
+//Funkcija za presmetka na brojot na delitelite na daden broj
+void br_deliteli()
+{
+	 int br, a=2;	//sekoj broj ima najmalku 2 deliteli (1 i samiot broj)
+	 cout<<"Vnesi eden broj: ";
+	 cin>>br;
+	 for(int i=2;i<br/2+1;i++){
+		 if(br%i==0){	//ako modulot na br so i e 0 ==> i e delitel na br
+			 a++;	//zgolemi go brojot na delitelite
+		 }
+	 }
+	 cout<<"Brojot "<<br<<" ima "<<a<<" deliteli.\n";
 }
