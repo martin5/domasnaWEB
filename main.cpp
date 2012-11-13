@@ -18,19 +18,23 @@ int main()
 //	--Lista od ponudeni opcii za izbor--
 int izbor()
 {
-	int izbr = 0;
+	float izbr = 0;
 	cout<<"Izbor:\n"<<
 	"1.Broj na deliteli\n"<<
 	"2.Zbir na reciprocni vrednosti"<<endl;
-	
+
 	cin>>izbr;
+
+	(int)izbr;//ako korisnikot vnesi decimalen broj
 
 	while(izbr<1 || izbr>2)//dokolku e izbrana nepostoecka opcija..
 	{
-		cout<<"Izborot treba da bide pomejdzu 1 i 2"<<endl;
+		cout<<"\nIzborot treba da bide pomejdzu 1 i 2:\t";
 		cin>>izbr;	//..izbiraj povtorno
+		(int)izbr;
 	}
-	return izbr;
+
+	return (int)izbr;
 }
 
 //	--Povikaj ja funkcijata sto ja izbral korisnikot--
