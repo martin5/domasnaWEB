@@ -53,13 +53,30 @@ void povikaj(int izbr)
 //Funkcija za presmetka na brojot na delitelite na daden broj
 void br_deliteli()
 {
-	 int br, a=2;	//sekoj broj ima najmalku 2 deliteli (1 i samiot broj)
+	 int br, a=0, tmp=1;
 	 cout<<"Vnesi eden broj: ";
 	 cin>>br;
-	 for(int i=2;i<br/2+1;i++){
-		 if(br%i==0){	//ako modulot na br so i e 0 ==> i e delitel na br
-			 a++;	//zgolemi go brojot na delitelite
-		 }
+
+	 if(br<0)
+	 {
+		 tmp=br;
+		 br*=-1;
 	 }
-	 cout<<"Brojot "<<br<<" ima "<<a<<" deliteli.\n";
+
+	 cout<<"!!!Kako deliteli se brojat SAMO pozitivnite broevi!!!\n";
+
+	 if(br==0)	//ako korisnikot vnesi 0
+		 cout<<"Brojot ima 0 deliteli."<<endl;
+	 else if(br==1)	//ako korisnikot vnesi 1
+		 cout<<"Brojot ima 1 delitel."<<endl;
+	 else{	//za site drugi broevi
+		 for(int i=2;i<br/2+1;i++){
+			 if(br%i==0){	//ako modulot na br so i e 0 ==> i e delitel na br
+				 a++;	//zgolemi go brojot na delitelite
+			 }
+		 }
+		 if(tmp<0)
+			 br=tmp;
+		 cout<<"Brojot "<<br<<" ima "<<a+2<<" deliteli.\n";
+	 }
 }
